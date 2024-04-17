@@ -15,6 +15,9 @@ const gameSchema = new mongoose.Schema({
   },
   time: {
     type: Number,
-    required: true,
   },
 });
+
+
+const gameModel = mongoose.model("Game", gameSchema);
+module.exports = gameModel;

@@ -2,9 +2,11 @@ const express = require("express");
 const router = express.Router();
 
 // CONTROLLERS
-const {createGameCards} = require("../controllers/games");
+const {createGameCards, getGameCardDetails, deleteGameCard} = require("../controllers/games");
 
 // GAMES ROUTES
-router.get("/", createGameCards);
+router.post("/create-game", createGameCards);
+router.get('/get-game-cards-details', getGameCardDetails);
+router.delete('/delete-game-card/:id', deleteGameCard);
 
 module.exports = router;
